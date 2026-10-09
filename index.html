@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Odonto Kabi · Samambaia Norte</title>
+<meta name="description" content="Odonto Kabi, clínica odontológica em Samambaia Norte desde 2007. Implantes, próteses, aparelho, canal, lentes de contato dental e clareamento. Nota 5,0 no Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#231c1e;
+  --ink-2:#4a3a3e;
+  --red:#c01f2f;
+  --red-deep:#94121f;
+  --rose:#d8336a;
+  --blush:#fbeef0;
+  --blush-2:#fdf6f7;
+  --paper:#ffffff;
+  --muted:#6a5a5e;
+  --line:rgba(35,28,30,.12);
+  --radius:22px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --display:"Cormorant Garamond",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{overflow-x:clip;font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--red);color:#fff}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:6px}
+html{scrollbar-color:var(--red) var(--blush)}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1;letter-spacing:-.01em;text-wrap:balance}
+em{font-style:normal;font-weight:700;color:var(--red)}
+.ic{width:20px;height:20px;flex:none}
+
+/* progress + nav */
+.progress{position:fixed;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--red),var(--rose));transform-origin:0 50%;transform:scaleX(0);z-index:60}
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:min(1200px,100% - 24px);z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 10px 8px 14px;border-radius:999px;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);transition:box-shadow .4s var(--ease)}
+.nav.scrolled{box-shadow:0 12px 36px -18px rgba(35,28,30,.35)}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.emblem{background:url(img/logo.webp) no-repeat;background-size:203%;background-position:50% 15%;mix-blend-mode:multiply;border-radius:50%}
+.brand .emblem{width:44px;height:44px}
+.brand-txt{font-family:var(--display);line-height:.9;color:var(--red)}
+.brand-txt small{display:block;font-size:.85rem;font-weight:600}
+.brand-txt b{font-size:1.6rem;font-weight:600;letter-spacing:.06em}
+.nav ul{display:flex;gap:26px;list-style:none;font-size:.92rem;font-weight:500}
+.nav ul a{position:relative;color:var(--ink-2)}
+.nav ul a::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:var(--red);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;font-weight:600;font-size:.95rem;border:0;cursor:pointer;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s;overflow:hidden;isolation:isolate}
+.btn-primary{background:var(--red);color:#fff}
+.btn-primary::before{content:"";position:absolute;inset:0;background:var(--red-deep);transform:translateY(101%);transition:transform .5s var(--ease);z-index:-1}
+.btn-primary:hover::before{transform:translateY(0)}
+.btn-primary:hover{box-shadow:0 16px 30px -14px rgba(35,28,30,.45)}
+.btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{background:var(--blush-2)}
+.btn .arrow{transition:transform .35s var(--ease)}
+.btn:hover .arrow{transform:translateX(4px)}
+.nav .btn{padding:10px 18px;font-size:.88rem}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
+.burger span{display:block;width:20px;height:1.5px;background:var(--ink);margin:5px auto}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;align-items:center;padding:130px 0 80px;overflow:hidden;background:radial-gradient(70% 60% at 85% 20%,var(--blush) 0%,transparent 60%),var(--paper)}
+.hero::after{content:"";position:absolute;right:-12%;top:8%;width:62%;height:84%;background:linear-gradient(135deg,rgba(216,51,106,.10),rgba(192,31,47,.04));clip-path:polygon(18% 0,100% 0,100% 100%,0 100%);pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(3rem,7.2vw,6rem);color:var(--ink);margin:0 0 26px}
+.line{display:block;overflow:hidden;padding-bottom:.1em}
+.line>span{display:inline-block;transform:translateY(110%);animation:rise 1.2s var(--ease) forwards}
+.line:nth-child(2)>span{animation-delay:.1s}
+.line:nth-child(3)>span{animation-delay:.2s}
+@keyframes rise{to{transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.hero .lead{font-size:1.12rem;color:var(--muted);max-width:520px;opacity:0;animation:fadeUp 1s .5s var(--ease) forwards}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px;opacity:0;animation:fadeUp 1s .65s var(--ease) forwards}
+.facts{display:flex;flex-wrap:wrap;gap:14px 34px;margin-top:44px;opacity:0;animation:fadeUp 1s .85s var(--ease) forwards}
+.fact{font-size:.82rem;color:var(--muted)}
+.fact strong{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:600;font-size:1.7rem;color:var(--ink);white-space:nowrap;line-height:1.15}
+.stars{display:flex;gap:2px;color:#e4a11b}
+.stars svg{width:15px;height:15px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--muted);flex:none}
+.is-open .dot{background:#1f9d55;box-shadow:0 0 0 4px rgba(31,157,85,.18)}
+
+.seal{position:relative;aspect-ratio:1;display:grid;place-items:center;max-width:480px;margin-inline:auto;width:100%}
+.seal-ring{position:absolute;inset:0;animation:spin 36s linear infinite}
+.seal-ring text{font-family:Manrope,sans-serif;font-size:13.5px;font-weight:700;letter-spacing:.32em;fill:var(--red)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.seal-core{width:64%;aspect-ratio:1;border-radius:50%;background:#fff;box-shadow:0 40px 70px -30px rgba(35,28,30,.35),0 0 0 14px rgba(255,255,255,.7);display:grid;place-items:center;transition:translate .6s var(--ease)}
+.seal-core .emblem{width:84%;aspect-ratio:1;animation:breathe 7s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1) rotate(-2deg)}50%{transform:scale(1.03) rotate(2deg)}}
+.seal-note{position:absolute;background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px 16px;display:flex;gap:12px;align-items:center;box-shadow:0 20px 40px -24px rgba(35,28,30,.4);font-size:.82rem;color:var(--muted);animation:float 7s ease-in-out infinite}
+.seal-note b{display:block;font-size:.95rem;color:var(--ink)}
+.seal-note .ic-wrap{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:var(--blush);color:var(--red)}
+.seal-note.n1{left:-6%;bottom:12%}
+.seal-note.n2{right:-4%;top:8%;animation-delay:-3s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* marquee */
+.marquee{background:var(--red);color:#fff;padding:20px 0;overflow:hidden;transform:rotate(-1.5deg);margin:0 -20px;position:relative;z-index:2}
+.track{display:flex;width:max-content;animation:marquee 34s linear infinite}
+.track span{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,3vw,2.3rem);white-space:nowrap;display:flex;align-items:center;gap:40px;padding-right:40px}
+.track span::after{content:"";width:9px;height:9px;border-radius:50%;background:#fff;opacity:.6}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+
+.section{padding:130px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:56px;flex-wrap:wrap}
+.head h2{font-size:clamp(2.4rem,5vw,4.2rem);max-width:700px}
+.head p{max-width:380px;color:var(--muted)}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about-media{position:relative;padding-bottom:60px}
+.about-visual{position:relative;aspect-ratio:4/5;width:80%;border-radius:var(--radius);overflow:hidden;background:var(--blush)}
+.about-visual img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;will-change:transform}
+.about-small{position:absolute;right:0;bottom:0;width:44%;border-radius:18px;overflow:hidden;border:6px solid #fff;box-shadow:0 30px 60px -25px rgba(35,28,30,.5);transform:rotate(3deg);transition:transform .6s var(--ease)}
+.about-small:hover{transform:rotate(0) scale(1.03)}
+.about-small img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.about-small figcaption,.about-visual figcaption{font-size:.8rem;font-weight:700;padding:8px 6px 4px;text-align:center;background:#fff}
+.about-visual figcaption{position:absolute;left:14px;top:14px;border-radius:999px;padding:6px 14px}
+.about-text h2{font-size:clamp(2.3rem,4.4vw,3.6rem);margin-bottom:24px}
+.about-text p{color:var(--muted);margin-bottom:18px;max-width:60ch}
+.about-text blockquote{font-family:var(--display);font-style:italic;font-size:1.6rem;line-height:1.3;color:var(--ink);margin:6px 0 26px;padding-left:0}
+.rt{display:flex;align-items:center;gap:16px;margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
+.rt .mono{width:56px;height:56px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-family:var(--display);font-size:1.5rem;font-weight:600}
+.rt b{display:block;font-family:var(--display);font-size:1.6rem;font-weight:600;line-height:1.1}
+.rt span{font-size:.85rem;color:var(--muted)}
+
+/* services: typographic list */
+.services{background:var(--ink);color:#fff;border-radius:40px 40px 0 0}
+.services .head h2{color:#fff}
+.services .head h2 em{color:#ff8fa5}
+.services .head p{color:rgba(255,255,255,.7)}
+.svc{list-style:none;display:grid;grid-template-columns:1fr 1fr;column-gap:56px;border-top:1px solid rgba(255,255,255,.14)}
+.svc li{border-bottom:1px solid rgba(255,255,255,.14)}
+.svc a{position:relative;display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px 20px;padding:24px 4px;overflow:hidden}
+.svc h3{font-size:clamp(1.7rem,2.6vw,2.2rem);font-weight:500;transition:transform .5s var(--ease),color .3s}
+.svc p{grid-column:1;font-size:.92rem;color:rgba(255,255,255,.62);max-width:44ch}
+.svc .go{grid-column:2;grid-row:1/3;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.22);display:grid;place-items:center;transition:background .35s,border-color .35s,transform .5s var(--ease)}
+.svc a::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(216,51,106,.16),transparent 70%);clip-path:inset(0 100% 0 0);transition:clip-path .6s var(--ease)}
+.svc a:hover::before{clip-path:inset(0 0 0 0)}
+.svc a:hover h3{transform:translateX(8px);color:#ffd1da}
+.svc a:hover .go{background:var(--red);border-color:var(--red);transform:rotate(-45deg)}
+
+/* shade simulator */
+.sim{background:var(--ink);color:#fff;padding:40px 0 130px}
+.sim-box{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center;padding:50px;border-radius:32px;background:linear-gradient(140deg,#3a2c30,#2a2124);border:1px solid rgba(255,255,255,.08)}
+.sim-box h2{font-size:clamp(2.2rem,4vw,3.4rem);margin-bottom:18px}
+.sim-box h2 em{color:#ff8fa5}
+.sim-box p{color:rgba(255,255,255,.7)}
+.teeth{display:flex;justify-content:center;gap:6px;padding:46px 20px 30px;background:radial-gradient(60% 70% at 50% 40%,#d9787a 0%,#9c3f4b 70%,#5e1f2b 100%);border-radius:120px 120px 160px 160px/80px 80px 140px 140px;box-shadow:inset 0 -20px 40px rgba(0,0,0,.35)}
+.teeth svg{width:clamp(30px,6vw,54px)}
+.teeth svg:nth-child(1),.teeth svg:nth-child(6){transform:translateY(-4px) scale(.82)}
+.teeth svg:nth-child(2),.teeth svg:nth-child(5){transform:scale(.92)}
+.shade-path{fill:var(--shade,#e7d3a6);transition:fill .25s}
+.range-wrap{margin-top:30px}
+.range-labels{display:flex;justify-content:space-between;font-size:.8rem;color:rgba(255,255,255,.7);margin-bottom:10px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:6px;background:linear-gradient(90deg,#d8bf85,#fffdf6);outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--red);border:4px solid #fff;cursor:grab;box-shadow:0 4px 16px rgba(0,0,0,.35)}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--red);border:4px solid #fff;cursor:grab}
+.shade-readout{margin-top:16px;font-family:var(--display);font-size:1.6rem}
+.shade-readout small{font-family:Manrope;font-size:.78rem;color:rgba(255,255,255,.62);display:block}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:1.3fr 1fr;gap:18px}
+.g-item{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;background:var(--blush)}
+.g-item:first-child{aspect-ratio:auto}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.g-item:hover img{transform:scale(1.05)}
+.g-item figcaption{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.94);padding:6px 14px;border-radius:999px;font-size:.85rem;font-weight:700}
+
+/* reviews */
+.rating{display:flex;align-items:center;gap:18px}
+.rating strong{font-family:var(--display);font-size:4.4rem;line-height:.9;color:var(--red)}
+.rating .stars svg{width:20px;height:20px}
+.rating span{font-size:.9rem;color:var(--muted)}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:36px 30px 28px;display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.review:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(35,28,30,.35)}
+.review .stars{margin-bottom:18px}
+.review blockquote{font-family:var(--display);font-size:1.45rem;line-height:1.3;flex:1}
+.review figcaption{padding-top:20px;margin-top:22px;border-top:1px solid var(--line);display:flex;align-items:center;gap:12px;font-size:.85rem;color:var(--muted)}
+.review figcaption b{display:block;color:var(--ink);font-size:.95rem}
+.avatar{flex:none;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--blush);color:var(--red);font-weight:700;font-size:.9rem}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.steps::before{content:"";position:absolute;top:30px;left:6%;right:6%;height:1px;background:var(--line)}
+.steps .bar{position:absolute;top:30px;left:6%;height:1px;width:88%;background:linear-gradient(90deg,var(--red),var(--rose));transform-origin:left;transform:scaleX(0);transition:transform 2s var(--ease)}
+.steps.in .bar{transform:scaleX(1)}
+.step .circle{width:60px;height:60px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-family:var(--display);font-size:1.5rem;font-weight:600;position:relative;z-index:1;transition:background .5s,color .5s,border-color .5s}
+.steps.in .step .circle{background:var(--red);color:#fff;border-color:var(--red)}
+.steps.in .step:nth-child(3) .circle{transition-delay:.5s}
+.steps.in .step:nth-child(4) .circle{transition-delay:1s}
+.steps.in .step:nth-child(5) .circle{transition-delay:1.5s}
+.step h3{font-size:1.6rem;margin:22px 0 8px}
+.step p{color:var(--muted);font-size:.95rem}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+.faq-grid h2{font-size:clamp(2.3rem,4.4vw,3.6rem)}
+details{border-bottom:1px solid var(--line);padding:24px 0}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:var(--display);font-weight:600;font-size:1.5rem}
+summary::-webkit-details-marker{display:none}
+summary .plus{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);position:relative;transition:transform .4s var(--ease),background .3s}
+summary .plus::before,summary .plus::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%)}
+summary .plus::after{transform:translate(-50%,-50%) rotate(90deg)}
+details[open] summary .plus{transform:rotate(45deg);background:var(--blush)}
+details .ans{color:var(--muted);padding-top:12px;max-width:600px;animation:fadeUp .5s var(--ease)}
+
+/* cta + contact */
+.cta{padding:0 0 120px}
+.cta-box{position:relative;overflow:hidden;border-radius:40px;padding:90px 50px;text-align:center;background:linear-gradient(135deg,var(--red) 0%,var(--red-deep) 100%);color:#fff}
+.cta-box::before{content:"";position:absolute;right:-10%;top:-30%;width:60%;height:160%;background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(216,51,106,.25));clip-path:polygon(30% 0,100% 0,100% 100%,0 100%);pointer-events:none}
+.cta-box h2{position:relative;font-size:clamp(2.6rem,6vw,5.2rem);max-width:900px;margin:0 auto 22px}
+.cta-box h2 em{color:#fff;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px}
+.cta-box p{position:relative;color:rgba(255,255,255,.88);max-width:540px;margin:0 auto 36px}
+.cta-box .ctas{position:relative;display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+.cta-box .btn-primary{background:#fff;color:var(--red)}
+.cta-box .btn-primary::before{background:var(--blush)}
+.cta-box .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.cta-box .btn-ghost:hover{background:rgba(255,255,255,.1)}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+.info>div{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.info h3{font-family:Manrope,sans-serif;font-size:.8rem;font-weight:700;color:var(--red);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.info p{color:var(--ink);font-weight:500}
+.info p a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.info p a:hover{color:var(--red)}
+.hours{list-style:none;font-size:.95rem}
+.hours li{display:flex;justify-content:space-between;gap:12px;padding:3px 0}
+.hours li.today{color:var(--red);font-weight:700}
+.hours span:last-child{font-variant-numeric:tabular-nums}
+.pill{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-size:.82rem;font-weight:700;padding:6px 12px;border-radius:999px;background:var(--blush-2)}
+.route{display:inline-flex;margin-top:12px;font-weight:700;font-size:.88rem;color:var(--red)}
+
+footer{border-top:1px solid var(--line);padding:34px 0;font-size:.85rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+footer a{display:inline-flex;align-items:center;gap:8px;color:var(--ink);font-weight:600}
+footer a:hover{color:var(--red)}
+
+.fab{position:fixed;right:20px;bottom:20px;z-index:40;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 14px 28px -12px rgba(35,28,30,.45);transition:transform .3s var(--ease)}
+.fab::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:pulse 2.4s ease-out infinite}
+.fab:hover{transform:scale(1.08)}
+@keyframes pulse{from{transform:scale(1);opacity:.8}to{transform:scale(1.7);opacity:0}}
+
+@media (max-width:960px){
+  .nav ul,.nav .btn{display:none}
+  .burger{display:block}
+  .nav.open{border-radius:26px;flex-wrap:wrap}
+  .nav.open ul{order:3;display:flex;flex-direction:column;width:100%;gap:16px;padding:14px 4px 10px}
+  .nav.open .btn{order:4;display:inline-flex;width:100%;justify-content:center;margin-bottom:6px}
+  .hero-grid,.about-grid,.sim-box,.faq-grid{grid-template-columns:1fr}
+  .seal{max-width:380px}
+  .svc{grid-template-columns:1fr}
+  .reviews{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr;row-gap:40px}
+  .steps::before,.steps .bar{display:none}
+  .info{grid-template-columns:1fr}
+  .section{padding:90px 0}
+  .gallery{grid-template-columns:1fr}
+  .g-item:first-child{aspect-ratio:4/5}
+}
+@media (max-width:600px){
+  .steps{grid-template-columns:1fr}
+  .sim-box{padding:28px 20px}
+  .cta-box{padding:60px 22px}
+  .seal-note.n1{left:0;bottom:-4%}.seal-note.n2{right:0;top:-4%}
+  footer{padding-bottom:100px}
+  .brand-txt b{font-size:1.4rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 4h3.5l1.5 4-2 1.5a11 11 0 0 0 6.5 6.5l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5A16.5 16.5 0 0 1 3.5 5.5 1.5 1.5 0 0 1 5 4z"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<div class="progress" id="progress"></div>
+
+<nav class="nav" id="nav" aria-label="Principal">
+  <a href="#top" class="brand" aria-label="Odonto Kabi, início">
+    <span class="emblem" aria-hidden="true"></span>
+    <span class="brand-txt"><small>Odonto</small><b>KABI</b></span>
+  </a>
+  <ul>
+    <li><a href="#sobre">A clínica</a></li>
+    <li><a href="#tratamentos">Tratamentos</a></li>
+    <li><a href="#estrutura">Estrutura</a></li>
+    <li><a href="#avaliacoes">Avaliações</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="https://agenda.link/os/789662" target="_blank" rel="noopener" class="btn btn-primary magnetic">Agendar on-line <span class="arrow">→</span></a>
+  <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>
+        <span class="line"><span>Amor no que</span></span>
+        <span class="line"><span>fazemos, <em>beleza</em></span></span>
+        <span class="line"><span>no seu sorriso.</span></span>
+      </h1>
+      <p class="lead">Desde 2007 cuidando de sorrisos em Samambaia Norte, realçando a sua beleza com naturalidade. Atendimento próximo, com a Dra. Kelly e uma equipe que conhece cada paciente pelo nome.</p>
+      <div class="ctas">
+        <a href="https://agenda.link/os/789662" target="_blank" rel="noopener" class="btn btn-primary magnetic">Agendar on-line <span class="arrow">→</span></a>
+        <a href="https://wa.me/5561982823516?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Odonto%20Kabi." target="_blank" rel="noopener" class="btn btn-ghost magnetic">Chamar no WhatsApp</a>
+      </div>
+      <div class="facts">
+        <div class="fact"><strong>5,0 <span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span></strong>124 avaliações no Google</div>
+        <div class="fact"><strong>Desde 2007</strong>em Samambaia Norte</div>
+        <div class="fact" id="heroStatus"><strong><span class="dot"></span><span data-status-label>Horário</span></strong><span data-status-sub>seg a sex 9h–17h30 · sáb 8h–12h</span></div>
+      </div>
+    </div>
+
+    <div class="seal" id="seal">
+      <svg class="seal-ring" viewBox="0 0 400 400" aria-hidden="true">
+        <defs><path id="circ" d="M200 200m-178 0a178 178 0 1 1 356 0a178 178 0 1 1-356 0"/></defs>
+        <text><textPath href="#circ" textLength="1110">ODONTO KABI · CLÍNICA ODONTOLÓGICA · DESDE 2007 · SAMAMBAIA NORTE · </textPath></text>
+      </svg>
+      <div class="seal-core" id="sealCore"><span class="emblem" role="img" aria-label="Emblema da Odonto Kabi"></span></div>
+      <div class="seal-note n1"><span class="ic-wrap"><svg class="ic"><use href="#i-heart"/></svg></span><div><b>Atendimento com carinho</b>Citado pelos pacientes</div></div>
+      <div class="seal-note n2"><span class="ic-wrap"><svg class="ic"><use href="#i-cal"/></svg></span><div><b>Agenda on-line</b>Marque em poucos cliques</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Implantes</span><span>Próteses</span><span>Aparelho ortodôntico</span><span>Canal</span><span>Restauração</span><span>Lentes de contato dental</span><span>Clareamento</span><span>Limpeza</span><span>Extração</span>
+    <span>Implantes</span><span>Próteses</span><span>Aparelho ortodôntico</span><span>Canal</span><span>Restauração</span><span>Lentes de contato dental</span><span>Clareamento</span><span>Limpeza</span><span>Extração</span>
+  </div>
+</div>
+
+<section class="section" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-media reveal">
+      <figure class="about-visual">
+        <img id="parallaxImg" src="img/consultorio.webp" alt="Consultório da Odonto Kabi com cadeira odontológica bordô e quadros de sorrisos na parede" loading="lazy">
+        <figcaption>Nosso consultório</figcaption>
+      </figure>
+      <figure class="about-small">
+        <img src="img/recepcao.webp" alt="Recepção da Odonto Kabi com cadeiras de espera e balcão em madeira" loading="lazy">
+        <figcaption>Recepção</figcaption>
+      </figure>
+    </div>
+    <div class="about-text">
+      <h2 class="reveal">Uma clínica de bairro, com cuidado de <em>especialista.</em></h2>
+      <blockquote class="reveal d1">“Aqui colocamos amor naquilo que fazemos, cuidando do seu sorriso e realçando a sua beleza com naturalidade.”</blockquote>
+      <p class="reveal d2">A Odonto Kabi atende Samambaia desde 2007, no Prédio da CAESB da QN 206. Do check-up à reabilitação com implantes, cada tratamento é explicado com calma, no seu tempo.</p>
+      <div class="rt reveal d3">
+        <span class="mono" aria-hidden="true">K</span>
+        <div><span>Responsável técnica</span><b>Dra. Kelly G. S. Isnenghi</b><span>Cirurgiã-dentista · CRO-DF 7981</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section services" id="tratamentos">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="reveal">Tratamentos para cada fase do seu <em>sorriso.</em></h2>
+      <p class="reveal d1">Da prevenção à reabilitação, tudo no mesmo endereço. Toque em um tratamento para tirar dúvidas pelo WhatsApp.</p>
+    </div>
+    <ul class="svc">
+      <li class="reveal"><a href="https://wa.me/5561982823516?text=Ol%C3%A1!%20Quero%20saber%20sobre%20implantes." target="_blank" rel="noopener"><h3>Implantes</h3><p>Devolvem firmeza à mordida e segurança para sorrir.</p><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></a></li>
+      <li class="reveal d1"><a href="https://wa.me/5561982823516?text=Ol%C3%A1!%20Quero%20saber%20sobre%20lentes%20de%20contato%20dental." target="_blank" rel="noopener"><h3>Lentes de contato dental</h3><p>Corrigem cor, forma e proporção com acabamento natural.</p><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></a></li>
+      <li class="reveal"><a href="https://wa.me/5561982823516?text=Ol%C3%A1!%20Quero%20saber%20sobre%20pr%C3%B3teses." target="_blank" rel="noopener"><h3>Próteses</h3><p>Reabilitação para mastigar e falar com conforto.</p><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></a></li>
+      <li class="reveal d1"><a href="#clareamento"><h3>Clareamento dental</h3><p>Dentes mais claros com acompanhamento profissional.</p><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></a></li>
+      <li class="reveal"><a href="https://wa.me/5561982823516?text=Ol%C3%A1!%20Quero%20saber%20sobre%20aparelho%20ortod%C3%B4ntico." target="_blank" rel="noopener"><h3>Aparelho ortodôntico</h3><p>Alinhamento dos dentes e da mordida, passo a passo.</p><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></a></li>
+      <li class="reveal d1"><a href="https://wa.me/5561982823516?text=Ol%C3%A1!%20Quero%20agendar%20uma%20limpeza." target="_blank" rel="noopener"><h3>Limpeza</h3><p>Prevenção que mantém gengiva e dentes saudáveis.</p><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></a></li>
+      <li class="reveal"><a href="https://wa.me/5561982823516?text=Ol%C3%A1!%20Quero%20saber%20sobre%20tratamento%20de%20canal." target="_blank" rel="noopener"><h3>Canal</h3><p>Alívio da dor e preservação do dente natural.</p><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></a></li>
+      <li class="reveal d1"><a href="https://wa.me/5561982823516?text=Ol%C3%A1!%20Quero%20saber%20sobre%20restaura%C3%A7%C3%A3o." target="_blank" rel="noopener"><h3>Restauração</h3><p>Recupera dentes com cárie ou desgaste, na cor do dente.</p><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></a></li>
+      <li class="reveal"><a href="https://wa.me/5561982823516?text=Ol%C3%A1!%20Preciso%20de%20uma%20extra%C3%A7%C3%A3o." target="_blank" rel="noopener"><h3>Extração</h3><p>Procedimento seguro, com orientação no pós-operatório.</p><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sim" id="clareamento">
+  <div class="wrap">
+    <div class="sim-box reveal">
+      <div>
+        <h2>Arraste e veja seu sorriso mais <em>claro.</em></h2>
+        <p>Uma prévia ilustrativa da escala de cor dental. Na consulta, a Dra. Kelly avalia e indica o tom mais natural para você.</p>
+        <div class="range-wrap">
+          <div class="range-labels"><span>Antes</span><span>Depois</span></div>
+          <input type="range" id="shade" min="0" max="100" value="0" aria-label="Nível de clareamento">
+          <div class="shade-readout" id="readout"><small>Tom estimado</small>A3 · natural</div>
+        </div>
+      </div>
+      <div class="teeth" id="teeth" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="estrutura">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="reveal">Um espaço pensado para você se sentir <em>à vontade.</em></h2>
+      <p class="reveal d1">Sala de espera confortável e consultório equipado, no Prédio da CAESB, salas 102 e 103.</p>
+    </div>
+    <div class="gallery">
+      <figure class="g-item reveal"><img src="img/consultorio.webp" alt="Consultório com cadeira odontológica bordô" loading="lazy"><figcaption>Consultório</figcaption></figure>
+      <figure class="g-item reveal d1"><img src="img/recepcao.webp" alt="Recepção e sala de espera" loading="lazy"><figcaption>Recepção</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="avaliacoes" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="reveal">Quem vem, <em>volta</em> e indica.</h2>
+      <div class="rating reveal d1"><strong>5,0</strong><div><span class="stars" aria-label="5 de 5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><span>124 avaliações no Google</span></div></div>
+    </div>
+    <div class="reviews">
+      <figure class="review reveal"><span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><blockquote>Clínica maravilhosa, sem falar da Dra. Kelly, excelente profissional.</blockquote><figcaption><span class="avatar">JB</span><div><b>Jackline Belmonte</b>Avaliação no Google</div></figcaption></figure>
+      <figure class="review reveal d1"><span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><blockquote>A dentista Kelly tem muito carinho no atendimento dos pacientes.</blockquote><figcaption><span class="avatar">EC</span><div><b>Ellis Cristina</b>Avaliação no Google</div></figcaption></figure>
+      <figure class="review reveal d2"><span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><blockquote>Preço acessível, localização ótima, ambiente confortável.</blockquote><figcaption><span class="avatar">HS</span><div><b>Hellen Cristina Silva</b>Avaliação no Google</div></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="como" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><h2 class="reveal">Do agendamento ao sorriso, <em>sem complicação.</em></h2></div>
+    <div class="steps" id="steps">
+      <div class="bar"></div>
+      <div class="step reveal"><div class="circle">1</div><h3>Agende</h3><p>Pela agenda on-line ou pelo WhatsApp, no horário que funciona para você.</p></div>
+      <div class="step reveal d1"><div class="circle">2</div><h3>Avaliação</h3><p>Exame, conversa sincera e explicação clara do que o seu sorriso precisa.</p></div>
+      <div class="step reveal d2"><div class="circle">3</div><h3>Plano</h3><p>Etapas e valores apresentados antes de começar.</p></div>
+      <div class="step reveal d3"><div class="circle">4</div><h3>Sorria</h3><p>Tratamento com carinho e acompanhamento depois da consulta.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="duvidas" style="padding-top:0">
+  <div class="wrap faq-grid">
+    <h2 class="reveal">Dúvidas <em>frequentes.</em></h2>
+    <div class="reveal d1">
+      <details open><summary>Como faço para agendar?<span class="plus"></span></summary><div class="ans">Pelo botão “Agendar on-line”, que abre a agenda da clínica, ou pelo WhatsApp (61) 98282-3516. Também atendemos no telefone fixo (61) 3358-4656.</div></details>
+      <details><summary>Onde fica a clínica?<span class="plus"></span></summary><div class="ans">QN 206, Conjunto C, Lote 02, salas 102 e 103, no Prédio da CAESB, em Samambaia Norte. O botão “Como chegar” abre a rota no Google Maps.</div></details>
+      <details><summary>Atendem aos sábados?<span class="plus"></span></summary><div class="ans">Sim. Sábado das 8h às 12h. De segunda a sexta, das 9h às 17h30.</div></details>
+      <details><summary>Quais as formas de pagamento?<span class="plus"></span></summary><div class="ans">Fale com a nossa equipe pelo WhatsApp para conhecer as formas de pagamento disponíveis para o seu tratamento.</div></details>
+      <details><summary>Fazem implante e lentes de contato dental?<span class="plus"></span></summary><div class="ans">Sim, além de próteses, aparelho, canal, restauração, clareamento, limpeza e extração. Na avaliação, indicamos o melhor caminho para o seu caso.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contato">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <h2>Seu próximo sorriso começa com <em>um clique.</em></h2>
+      <p>Escolha o melhor horário na agenda on-line ou fale com a gente pelo WhatsApp.</p>
+      <div class="ctas">
+        <a href="https://agenda.link/os/789662" target="_blank" rel="noopener" class="btn btn-primary magnetic"><svg class="ic"><use href="#i-cal"/></svg>Agendar on-line</a>
+        <a href="https://wa.me/5561982823516?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Odonto%20Kabi." target="_blank" rel="noopener" class="btn btn-ghost magnetic">WhatsApp</a>
+        <a href="https://www.instagram.com/odontokabi/" target="_blank" rel="noopener" class="btn btn-ghost magnetic"><svg class="ic"><use href="#i-ig"/></svg>Instagram</a>
+      </div>
+    </div>
+    <div class="info">
+      <div class="reveal">
+        <h3><svg class="ic"><use href="#i-pin"/></svg>Endereço</h3>
+        <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Odonto+Kabi+QN+206+Conjunto+C+Samambaia+Norte+DF" target="_blank" rel="noopener">QN&nbsp;206, Cj.&nbsp;C, Lote&nbsp;02, Salas&nbsp;102/103<br>Prédio da CAESB · Samambaia Norte<br>Brasília – DF · 72316-503</a></p>
+        <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;destination=Odonto+Kabi+QN+206+Conjunto+C+Samambaia+Norte+DF" target="_blank" rel="noopener">Como chegar →</a>
+      </div>
+      <div class="reveal d1" id="hoursCard">
+        <h3><svg class="ic"><use href="#i-clock"/></svg>Horários</h3>
+        <ul class="hours">
+          <li data-day="1"><span>Segunda</span><span>9h – 17h30</span></li>
+          <li data-day="2"><span>Terça</span><span>9h – 17h30</span></li>
+          <li data-day="3"><span>Quarta</span><span>9h – 17h30</span></li>
+          <li data-day="4"><span>Quinta</span><span>9h – 17h30</span></li>
+          <li data-day="5"><span>Sexta</span><span>9h – 17h30</span></li>
+          <li data-day="6"><span>Sábado</span><span>8h – 12h</span></li>
+          <li data-day="0"><span>Domingo</span><span>Fechado</span></li>
+        </ul>
+        <span class="pill"><span class="dot"></span><span data-status-full>—</span></span>
+      </div>
+      <div class="reveal d2">
+        <h3><svg class="ic"><use href="#i-phone"/></svg>Contato</h3>
+        <p><a href="https://wa.me/5561982823516" target="_blank" rel="noopener">(61) 98282-3516</a> · WhatsApp<br><a href="tel:+556133584656">(61) 3358-4656</a> · Fixo<br><a href="https://www.instagram.com/odontokabi/" target="_blank" rel="noopener">@odontokabi</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Odonto Kabi · Clínica Odontológica · Samambaia Norte – DF</span>
+    <span>Responsável técnica: Dra. Kelly G. S. Isnenghi · CRO-DF 7981</span>
+    <a href="https://www.instagram.com/odontokabi/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ig"/></svg>@odontokabi</a>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/5561982823516?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Odonto%20Kabi." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.5-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+</a>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // aberto agora? (horário de Brasília): seg–sex 9h–17h30, sáb 8h–12h
+  const HOURS = {1:[540,1050],2:[540,1050],3:[540,1050],4:[540,1050],5:[540,1050],6:[480,720]};
+  const NAMES = ['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+  const fmt = m => Math.floor(m / 60) + 'h' + (m % 60 ? String(m % 60).padStart(2, '0') : '');
+  function clinicStatus(){
+    const p = Object.fromEntries(new Intl.DateTimeFormat('en-US', {timeZone:'America/Sao_Paulo', weekday:'short', hour:'2-digit', minute:'2-digit', hourCycle:'h23'}).formatToParts(new Date()).map(x => [x.type, x.value]));
+    const day = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday), m = +p.hour * 60 + +p.minute;
+    const today = HOURS[day];
+    if (today && m >= today[0] && m < today[1]) return {day, open:true, label:'Aberto agora', sub:'fecha às ' + fmt(today[1])};
+    if (today && m < today[0]) return {day, open:false, label:'Fechado agora', sub:'abre hoje às ' + fmt(today[0])};
+    for (let i = 1; i <= 7; i++) {
+      const d = (day + i) % 7;
+      if (HOURS[d]) return {day, open:false, label:'Fechado agora', sub:'abre ' + (i === 1 ? 'amanhã' : NAMES[d]) + ' às ' + fmt(HOURS[d][0])};
+    }
+  }
+  function paintStatus(){
+    const s = clinicStatus();
+    const hero = document.getElementById('heroStatus');
+    hero.classList.add('ready'); hero.classList.toggle('is-open', s.open);
+    hero.querySelector('[data-status-label]').textContent = s.label;
+    hero.querySelector('[data-status-sub]').textContent = s.sub;
+    const card = document.getElementById('hoursCard');
+    card.classList.toggle('is-open', s.open);
+    card.querySelector('[data-status-full]').textContent = s.label + ' · ' + s.sub;
+    card.querySelectorAll('[data-day]').forEach(li => li.classList.toggle('today', +li.dataset.day === s.day));
+  }
+  paintStatus(); setInterval(paintStatus, 60000);
+
+  // nav, progresso e parallax
+  const nav = document.getElementById('nav'), bar = document.getElementById('progress'), img = document.getElementById('parallaxImg');
+  let ticking = false;
+  function onScroll(){
+    const y = scrollY, h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = `scaleX(${h > 0 ? y / h : 0})`;
+    nav.classList.toggle('scrolled', y > 30);
+    if (!reduce && img) {
+      const r = img.getBoundingClientRect(), p = (innerHeight - r.top) / (innerHeight + r.height);
+      img.style.transform = `translateY(${(p - .5) * -50}px) scale(1.04)`;
+    }
+    ticking = false;
+  }
+  addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(onScroll); ticking = true; } }, {passive:true});
+  onScroll();
+
+  // menu mobile
+  const burger = document.getElementById('burger');
+  burger.addEventListener('click', () => burger.setAttribute('aria-expanded', nav.classList.toggle('open')));
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); }));
+
+  // revelar ao rolar
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {threshold:.18, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal, #steps').forEach(el => io.observe(el));
+
+  if (!reduce && matchMedia('(pointer:fine)').matches) {
+    // selo acompanha o mouse
+    const seal = document.getElementById('seal'), core = document.getElementById('sealCore');
+    seal.addEventListener('pointermove', e => {
+      const r = seal.getBoundingClientRect();
+      core.style.translate = `${((e.clientX - r.left) / r.width - .5) * 26}px ${((e.clientY - r.top) / r.height - .5) * 26}px`;
+    });
+    seal.addEventListener('pointerleave', () => core.style.translate = '0 0');
+    // botões magnéticos
+    document.querySelectorAll('.magnetic').forEach(b => {
+      b.addEventListener('pointermove', e => {
+        const r = b.getBoundingClientRect();
+        b.style.transform = `translate(${(e.clientX - r.left - r.width/2) * .25}px, ${(e.clientY - r.top - r.height/2) * .35}px)`;
+      });
+      b.addEventListener('pointerleave', () => b.style.transform = '');
+    });
+  }
+
+  // simulador de clareamento
+  const teeth = document.getElementById('teeth');
+  const toothPath = 'M100 30C70 10 30 20 30 70c0 35 15 50 20 80 5 35 10 55 25 55s13-45 25-45 10 45 25 45 20-20 25-55c5-30 20-45 20-80 0-50-40-60-70-40Z';
+  for (let i = 0; i < 6; i++) {
+    teeth.insertAdjacentHTML('beforeend', `<svg viewBox="0 0 200 220" style="rotate:180deg"><path class="shade-path" d="${toothPath}"/><path fill="#fff" opacity=".35" d="M58 58c10-18 30-22 42-14-16 2-28 10-34 28-4 10-14 2-8-14z"/></svg>`);
+  }
+  const shades = [['A3','natural'],['A2','mais claro'],['A1','claro'],['B1','muito claro'],['BL2','clareado'],['BL1','ultra branco']];
+  const from = [231,211,166], to = [255,253,246];
+  const range = document.getElementById('shade'), out = document.getElementById('readout');
+  function setShade(v){
+    const p = v / 100, c = from.map((f,i) => Math.round(f + (to[i] - f) * p));
+    teeth.style.setProperty('--shade', `rgb(${c})`);
+    const s = shades[Math.min(shades.length - 1, Math.floor(p * shades.length))];
+    out.innerHTML = `<small>Tom estimado</small>${s[0]} · ${s[1]}`;
+    teeth.querySelectorAll('svg').forEach(t => t.style.filter = `drop-shadow(0 0 ${p * 10}px rgba(255,255,255,${p * .7}))`);
+  }
+  range.addEventListener('input', e => setShade(+e.target.value));
+  setShade(0);
+  const simIO = new IntersectionObserver(([en]) => {
+    if (!en.isIntersecting || reduce) return;
+    simIO.disconnect();
+    let v = 0;
+    const iv = setInterval(() => { v += 2; range.value = v; setShade(v); if (v >= 70) clearInterval(iv); }, 22);
+  }, {threshold:.5});
+  simIO.observe(teeth);
+})();
+</script>
+</body>
+</html>
